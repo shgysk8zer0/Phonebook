@@ -37,3 +37,6 @@
 [submodule "images/logos"]
 	path = images/logos
 	url = git://github.com/shgysk8zer0/logos.git
+[submodule "lib"]
+	path = lib
+	url = git://github.com/shgysk8zer0/PHP-lib.git
