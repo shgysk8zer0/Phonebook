@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'cli-server'])) {
 
 Funcs\init_assert();
 Funcs\php_version_check('5.6');
-Funcs\autoloader(['classes', '..']);
+Funcs\autoloader(['classes', '..', './config']);
 
 date_default_timezone_set(\Constants\TIMEZONE);
 
