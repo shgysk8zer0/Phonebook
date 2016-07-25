@@ -1,10 +1,12 @@
 <?php
 namespace Components\Body;
+use \Lib\Functions as Funcs;
+
 return function(\shgysk8zer0\DOM\HTML $dom)
 {
-	$manifest = \Functions\json_decode_file(\Index\MANIFEST);
+	$manifest = Funcs\json_decode_file(\Constants\MANIFEST);
 	$details = $dom->body->append('details');
 	$details->append('summary', 'output');
 	$details->append('pre', \htmlentities(print_r($manifest, true)));
-	\Functions\load('footer');
+	Funcs\load('footer');
 };

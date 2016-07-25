@@ -1,10 +1,9 @@
 <?php
 namespace Components\Footer;
 
-const ICON_SIZE = 64;
 return function(\shgysk8zer0\DOM\HTML $dom)
 {
-	$manifest = \Functions\json_decode_file(\Index\MANIFEST);
+	$manifest = \Lib\Functions\json_decode_file(\Constants\MANIFEST);
 
 	$footer = $dom->body->append('footer');
 
@@ -18,8 +17,8 @@ return function(\shgysk8zer0\DOM\HTML $dom)
 		'href'   => $manifest->repository->url,
 		'target' => '_blank'
 	])->append('svg', null, [
-		'width'  => ICON_SIZE,
-		'height' => ICON_SIZE
+		'width'  => \Constants\ICON_SIZE,
+		'height' => \Constants\ICON_SIZE
 	])->append('use', null, [
 		'xlink:href' => 'images/icons.svg#github'
 	]);
@@ -28,11 +27,11 @@ return function(\shgysk8zer0\DOM\HTML $dom)
 		'href'   => $manifest->bugs->url,
 		'target' => '_blank'
 	])->append('svg', null, [
-		'width'  => ICON_SIZE,
-		'height' => ICON_SIZE
+		'width'  => \Constants\ICON_SIZE,
+		'height' => \Constants\ICON_SIZE
 	])->append('use', null, [
 		'xlink:href' => 'images/icons.svg#issue-opened'
 	]);
 
-	\Functions\load('author');
+	\Lib\Functions\load('author');
 };

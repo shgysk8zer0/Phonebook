@@ -2,7 +2,7 @@
 namespace Components\Head;
 return function(\shgysk8zer0\DOM\HTML $dom, \shgysk8zer0\Core\Headers $headers)
 {
-	$manifest = \Functions\json_decode_file(\Index\MANIFEST);
+	$manifest = \Lib\Functions\json_decode_file(\Constants\MANIFEST);
 	$dom->head->append('title', $manifest->name);
 	$dom->head->append('meta', null, [
 		'name'    => 'description',

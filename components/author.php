@@ -2,8 +2,8 @@
 namespace Components\Author;
 return function(\shgysk8zer0\DOM\HTML $dom)
 {
-	$id = \Functions\filename(__FILE__) . '_dialog';
-	$manifest = \Functions\json_decode_file(\Index\MANIFEST);
+	$id = \Lib\Functions\filename(__FILE__) . '_dialog';
+	$manifest = \Lib\Functions\json_decode_file(\Constants\MANIFEST);
 	$gravatar = new \shgysk8zer0\Gravatar\URL($manifest->author->email, 128);
 
 	$dialog = $dom->body->append('dialog', null, [
