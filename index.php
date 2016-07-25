@@ -1,20 +1,19 @@
 <?php
 namespace Index;
+use \Lib\Functions as Funcs;
 
-const MANIFEST = './package.json';
+require_once './constants.php';
 
-require_once './functions.php';
-set_include_path(realpath('classes') . PATH_SEPARATOR . dirname(__DIR__));
-spl_autoload_register('spl_autoload');
-spl_autoload_extensions('.php');
+if (in_array(PHP_SAPI, ['cli', 'cli-server'])) {
+	require_once './lib/functions.php';
+}
 
+Funcs\init_assert();
+Funcs\php_version_check('5.6');
+Funcs\autoloader(['classes', '..']);
+
+date_default_timezone_set(\Constants\TIMEZONE);
+
+\shgysk8zer0\Core\Console::getInstance()->asErrorHandler()->asExceptionHandler();
 \shgysk8zer0\DOM\HTML::$echoOnExit = true;
-
-set_exception_handler(function(\Exception $e)
-{
-	header('Content-Type: text/plain');
-	exit($e);
-});
-
-\Functions\load('head', 'body');
-
+Funcs\load('head', 'body');
