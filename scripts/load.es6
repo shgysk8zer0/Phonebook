@@ -1,5 +1,3 @@
-import $ from './std-js/zq.es6';
-
 export function openModal() {
 	document.querySelector(this.dataset.showModal).showModal();
 }
