@@ -13,7 +13,7 @@ supportsAsClasses('svg', 'audio', 'video', 'picture', 'canvas', 'menuitem',
 polyfill();
 
 $(window).load(function() {
-	if (! ('show' in Element.prototype)) {
+	if (! ('HTMLDetailsElement' in window)) {
 		$('details > summary').click(Loader.toggleDetails);
 	}
 
