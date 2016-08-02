@@ -4,6 +4,7 @@
 /npm-debug.log
 /scripts/custom.js
 /images/icons.svg
+/config/connect.json
 *js.map
 
 #################
